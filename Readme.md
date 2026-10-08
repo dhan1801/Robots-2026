@@ -1,24 +1,26 @@
 # Robots 2026 – Virtual Reality Game
 
-A virtual reality quiz game built in Unity with C#. The player investigates the story of the fictional company Robot Corp by asking four robots for their opinions, then answers questions on a tablet. It was built by a team of five (3 art students and 2 computer science students) and demonstrated in class.
+*Robots Corp* is a virtual reality game about social influence. The player is the newest prototype robot at Robots Corp, going through a mandatory evaluation. To answer each quiz question, the player can consult four senior robots, whose opinions nudge them toward a choice. The game was designed to prompt discussion about mob mentality and the erosion of free thinking in the age of technology.
+
+It was built by a team of five (three art students and two computer science students) for a UMass Lowell course and presented at a class VR event.
 
 ## How It Plays
 
-1. **Intro:** the game opens with an audio introduction, then loads the main scene. Press `S` on the keyboard to skip the intro.
-2. **Start:** press Start on the tablet to begin the quiz.
+1. **Intro:** the game opens with a voiceover tutorial, then loads the main scene. Press `S` on the keyboard to skip the intro.
+2. **Start:** press Start on the tablet to begin the evaluation.
 3. **Consult the robots:** each question appears on the tablet with four answers, but the answers are locked. Point at a robot's name tag with the ray interactor and click it to hear that robot's opinion on the current question. The robots are PIPER, SAM, HELO and GIDE.
 4. **Answer:** once all four robots have been consulted, the answers unlock. Each answer is worth points, and the correct answers are worth the most.
 5. **Repeat:** the robots reset for the next question. After all 5 questions, the game loads the winner scene if the score reaches 70 points, and the loser scene otherwise.
 
-The five questions ask about Robot Corp: when and by whom it was founded, its mission, what caused the 2021 Shutdown, and what the company is hiding.
+The questions ask about the fictional company: when and by whom it was founded, its mission, what caused the 2021 Shutdown, and what it is hiding.
 
 ## Features
 
 - 5 quiz questions, each with a separate opinion from each of the 4 robots.
-- Ray-based VR interaction using Unity's XR Interaction Toolkit.
+- Ray-based VR interaction using Unity's XR Interaction Toolkit. Robots are selected through name-tag buttons.
 - Tablet lock that keeps answers disabled until the player has consulted all 4 robots.
 - Score tracking with a win threshold.
-- Four scenes: `IntroScene`, `MainScene`, `WinnerScene` and `LoserScene`.
+- Voiceover tutorial and four scenes: `IntroScene`, `MainScene`, `WinnerScene` and `LoserScene`.
 - Questions stored as Unity `ScriptableObject` assets (`Assets/Questions`), so they can be edited without changing code.
 
 ## Tech Stack
@@ -28,16 +30,33 @@ The five questions ask about Robot Corp: when and by whom it was founded, its mi
 - OpenXR 1.16.1 and the Oculus XR Plugin 4.5.4
 - Unity Input System and TextMeshPro
 
-## My Contributions
+## Team and Roles
 
-I was one of the two programmers on the team. I built:
+| Member | Contribution |
+| --- | --- |
+| Dhanvika Nakka | Programming: quiz questions and robot opinions, ray interactors, tablet lock, scene transitions |
+| Laya Rangu | Programming: scoring and player locomotion |
+| Jake Fisher | Art: yellow and blue robot, scrapped answer buttons, presentation sketches |
+| Millicent Basler | Art: blue and pink robot, textbox sketches, presentation sketches |
+| Juju Rosario Alicea | Art: environment background, vault door, event flyer. Also story development and project documentation |
 
-- the quiz questions and the per-question robot opinions displayed when a robot is selected
-- the ray interactor setup, and testing that the interactions worked properly
-- the tablet lock that requires all 4 robots to be consulted before answering
-- the transitions from the intro through each question to the win and lose scenes
+## Scope Changes
 
-The other programmer built the scoring system and player locomotion. The three art students created the robots and the environment.
+The original plan was more ambitious than the time allowed, and a large share of the final weeks went into debugging in VR. The finished game is a proof of concept that could be expanded.
+
+| | Original concept | Final |
+| --- | --- | --- |
+| Questions | 5 | 5 |
+| Environment | Conveyor belt and factory | Stationary lab |
+| Robot interaction | Eye registration shows a thought bubble | Name labels that act as buttons |
+| Endings | Animated | Win and lose scenes |
+| Tutorial | None | Voiceover |
+
+## What I Learned
+
+- Define a minimum viable product early, and cut features before the deadline forces you to.
+- Test on the headset often. Small errors in scale, rotation or position can break a VR experience, and fixing them takes longer than expected.
+- Give each part of the Unity project a clear owner to avoid overlap, and commit regularly so work is backed up on GitHub.
 
 ## Running the Project
 
