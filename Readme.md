@@ -64,3 +64,9 @@ The original plan was more ambitious than the time allowed, and a large share of
 2. Clone the repository and add the project folder in Unity Hub.
 3. Open `Assets/Scenes/IntroScene.unity` and press Play. Without a headset, use the XR Device Simulator from the XR Interaction Toolkit samples included in the project.
 4. To play on a headset, switch the build target to Android and build to a device that supports OpenXR or Oculus.
+
+
+https://github.com/user-attachments/assets/a5095063-eddd-4520-ad54-25a52dab4535
+
+
+
